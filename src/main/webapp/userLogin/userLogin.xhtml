@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+</h:head>
+<body>
+<h:form>
+ <p:layout style="min-width:400px;min-height:200px;">
+ <p:layoutUnit position="west" resizable="true" size="600" minSize="40" maxSize="600">
+ <h3>ADMIN</h3>
+	<h:panelGrid columns="2" cellpadding="5">
+ 	   <h:outputLabel for="username" value="Username:" />
+	   <p:inputText id="username" value="#{userLogin.user.username}" required="true" />
+	   
+	   <h:outputLabel for="password" value="password:" />
+	   <p:password  id="password" value="#{userLogin.user.password}" feedback="true" />   
+	   <f:facet name="footer">
+	   	<p:commandButton id="button"  value="Login" actionListener="#{userLogin.login}"/>   		
+	   </f:facet>
+	   </h:panelGrid>
+	   </p:layoutUnit>
+	   
+	   <p:layoutUnit position="center" resizable="true" size="100" minSize="40" maxSize="200">
+	   <h3>EMPLOYEE</h3>
+	   <h:panelGrid columns="2" cellpadding="5">
+ 	   <h:outputLabel for="username" value="Username:" />
+	   <p:inputText id="username1" value="#{userLogin.user.username}" required="true" />
+	   
+	   <h:outputLabel for="password" value="password:" />
+	   <p:password  id="password1" value="#{userLogin.user.password}" feedback="true" />   
+	   <f:facet name="footer">
+	   	<p:commandButton ajax='false'  id="button1" value="Submit" action="#{userLogin.login}"/>   		
+	   </f:facet>
+	   </h:panelGrid>
+	   </p:layoutUnit>
+ </p:layout>
+  
+ 
+  
+	</h:form>
+
+</body>
+</html>
